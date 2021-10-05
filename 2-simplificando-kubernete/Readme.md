@@ -1,33 +1,31 @@
-Kubernets: 
+### Kubernets: 
 	É formado por um cluster(São um conjunto de máquina) e cada
 	um dessas máquina irá exercer um dos dois papeis possíveis
 
-Papeis:
-	1 - Kubernetes Nodes:
+### Papeis:
+1 - Kubernetes Nodes
 	Node é responsável por executar os container das app's.
 	responsável por executar toda a carga.
-	
-	Componentes do Node:
-		1.1 Kulelet:
-			Atua como agente de inspeção do node
-			Responsável por garantir a execução dos containers e interagir com o 
-			Kube Api Server para reportar o STATUS. 
+
+#### Componentes do Node:
+	1.1 Kulelet:
+		Atua como agente de inspeção do node
+		Responsável por garantir a execução dos containers e interagir com o 
+		Kube Api Server para reportar o STATUS. 
 			
-		1.2 Kube Proxy:
-			Responsável pelas comunicações de redes com o Cluster 
+	1.2 Kube Proxy:
+		Responsável pelas comunicações de redes com o Cluster 
 			
-		1.3 Container Runtime ou CRI:
-			São as especificações necessárias para que um container runtime
-			seja utilizado dentro do Kubernete para executar os containers.
+	1.3 Container Runtime ou CRI:
+		São as especificações necessárias para que um container runtime
+		seja utilizado dentro do Kubernete para executar os containers.
 			
-			Obs: 
-			1 - É possível executar vários containers em runtime ao mesmo.
-			2 - O Docker nunca implementou o Container Runtime Interface ou CRI.
-			O Docker usa Docker Shim com adaptador como Interface do CRI e a 
-			interface do Docker.
-			3 - Versão 1.20 Kubernet descontinuado o uso do Docker como container runtime
-			4 - Alternativas que podem ser usados ao inves do Docker no caso
-			de um container runtime:
+		Obs: 
+		1 - É possível executar vários containers em runtime ao mesmo.
+		2 - O Docker nunca implementou o Container Runtime Interface ou CRI.
+		O Docker usa Docker Shim com adaptador como Interface do CRI e a interface do Docker.
+		3 - Versão 1.20 Kubernet descontinuado o uso do Docker como container runtime
+		4 - Alternativas que podem ser usados ao inves do Docker no caso de um container runtime:
 				Container Shim
 				Container RKT
 				Container Frakti
@@ -62,18 +60,18 @@ Papeis:
 				*Autorizações;
 				*Admissões.
 		
-FORMAS DE TER UM CLUSTER KUBERNETES
-/***********************************************************************/
+#### FORMAS DE TER UM CLUSTER KUBERNETES
+---
 	On-Premisse:
 		Geralmente usa máquinas fisicas/Virtuais(EC2, Azure, etc...) e a 
 		instalação e configurações são feitas do zero.
 		
 		Ferramentas para criar o cluster kubernete on-premisse
-			Kubeadm
-			Kubespray
-			RKE
-			K3S
-			MicroK8S
+			> Kubeadm
+			> Kubespray
+			> RKE
+			> K3S
+			> MicroK8S
 		
 		Não recomendável quando se tem uma equipe pequena ou equipe com pouca experiência com
 		o kubernete.
@@ -112,8 +110,8 @@ FORMAS DE TER UM CLUSTER KUBERNETES
 			MicroK8S
 			K3S
 			
-USANDO O KIND LOCAL - https://kind.sigs.k8s.io/
-/***********************************************************************/
+#### USANDO O KIND LOCAL - https://kind.sigs.k8s.io/
+---
 Instalar o KubeCTL parecido como se fosse o Docker CLI
 	https://kubernetes.io/docs/tasks/tools/
 
@@ -122,7 +120,9 @@ Instalar o Kind:
 	sudo mv ./kind /usr/local/bin
 	
 	
-CRIANDO O CLUSTER COM O KIND
-/***********************************************************************/
+#### CRIANDO O CLUSTER COM O KIND
+---
+```sh
 $ sudo service docker start
 $ kind create cluster
+```
